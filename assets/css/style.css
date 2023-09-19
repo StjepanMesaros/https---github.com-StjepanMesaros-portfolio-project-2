@@ -25,9 +25,13 @@ p {
     margin-bottom: 75px;
 }
 
-button {
+.button {
     width: 50%;
     margin: 25px auto;
+}
+
+#third-button {
+    display: none;
 }
 
 #bartender-image {
