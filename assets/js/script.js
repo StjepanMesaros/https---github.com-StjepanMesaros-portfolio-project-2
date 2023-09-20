@@ -7,7 +7,6 @@ let div = document.getElementsByTagName("div");
 
 
 
-
 setTimeout(()=> {bartender[0].src = "assets/images/bartender3.png"},1000);
 
 for (let i = 0; i < buttons.length; i++) {
@@ -27,7 +26,7 @@ function chosenNumberOfDice () {
 }
 
 function  gameModeSelected (event) {
-    let gameModePressed = event.value;
+    //let gameModePressed = event.value;
     header[0].style.display = "none";
     paragraph[0].style.display = "none";
     bartender[0].src = "assets/images/bartender5.png";
@@ -44,6 +43,5 @@ function  gameModeSelected (event) {
     buttons[2].style.display = "none";
     div[0].style.display = "flex"
     div[0].style.flexDirection = "row";
-
 }
 

@@ -42,3 +42,10 @@ div {
     max-width: 97.5%;
 }
 
+.dice-images {
+    display: none;
+}
+
+#table {
+    display: none;
+}
