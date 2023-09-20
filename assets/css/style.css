@@ -44,8 +44,28 @@ div {
 
 .dice-images {
     display: none;
+    width: 20%;
+    margin-top: -25%;
 }
 
-#table {
+#table-image {
     display: none;
+}
+
+@media screen and (min-width: 375px) {
+    #bartender-image {
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #bartender-image {
+        max-width: 40%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #bartender-image {
+        max-width: 30%;
+    }
 }
