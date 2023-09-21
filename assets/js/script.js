@@ -26,6 +26,8 @@ function chosenNumberOfDice () {
     }
 }
 
+let diceNumber = Math.floor(Math.random() * 6 + 1);
+
 function  gameModeSelected (event) {
     //let gameModePressed = event.value;
     header[0].style.display = "none";
@@ -35,7 +37,7 @@ function  gameModeSelected (event) {
     setTimeout(()=> {
         bartender.src = "assets/images/bartender.png";
     },1000);
-    bartender.style.maxWidth = "80%";
+    //bartender.style.maxWidth = "80%";
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].style.display = "flex";
         buttons[i].style.justifyContent = "space-between";
@@ -44,7 +46,8 @@ function  gameModeSelected (event) {
     buttons[2].style.display = "none";
     div[0].style.display = "flex"
     div[0].style.flexDirection = "row";
-    
+    dice[0].src = `assets/images/number-${diceNumber}.png`
+    dice[0].style.display = "flex"
 }
 
 function showDice() {
