@@ -47,8 +47,7 @@ function  gameModeSelected (event) {
     
 }
 
-function showTableAndDice() {
-    table.style.display = "flex"
+function showDice() {
     dice[0].style.display = "flex"
     
 }

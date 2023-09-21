@@ -48,9 +48,7 @@ div {
     margin-top: -25%;
 }
 
-#table-image {
-    display: none;
-}
+
 
 @media screen and (min-width: 375px) {
     #bartender-image {
