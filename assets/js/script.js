@@ -94,8 +94,9 @@ function addEventListenerToButtons () {
 }
 
 function resetTheBoard (event) {
+    let click = event.value;
     rollDice();
-    compareRolls(event);
+    compareRolls(click);
     addEventListenerToButtons();
     console.log(diceNumberTotal1)
     console.log(diceNumberTotal2)
@@ -110,11 +111,13 @@ function rollDice () {
         dice[i].src = `assets/images/number-${diceNumber}.png`
         diceNumberTotal2 += diceNumber; 
     }
+    console.log(`rollDice ${diceNumberTotal2}`);
 }
 
 // Compares rolls
-function compareRolls (event){
-    let clickedButton = event.value;
+function compareRolls (click){
+    let clickedButton = click;
+    console.log(`Event is ${clickedButton}`);
     if (clickedButton === "Higher"){
         if (diceNumberTotal2 > diceNumberTotal1){
             score++
