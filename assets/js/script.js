@@ -6,14 +6,17 @@ let buttonsDiv = document.getElementById("buttons-div");
 let table = document.getElementById("table-image")
 let dice = document.getElementsByClassName("die")
 
-console.log(buttons)
 
 
-setTimeout(()=> {bartender.src = "assets/images/bartender3.png"},1000);
+setTimeout(()=> {
+    bartender.src = "assets/images/bartender3.png";
+    
+},1000);
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", chosenNumberOfDice);
 }
+
 
 function chosenNumberOfDice () {
     bartender.src = "assets/images/bartender4.png";
@@ -23,14 +26,16 @@ function chosenNumberOfDice () {
     buttons[1].innerHTML = "Against a PC";
     
     for (let i = 0; i < buttons.length; i++) {
+        buttons[i].removeEventListener("click", chosenNumberOfDice)
         buttons[i].addEventListener("click", gameModeSelected);
     }
+    
 }
 
 
+let score = 0;
 
-function  gameModeSelected (event) {
-    //let gameModePressed = event.value;
+function  gameModeSelected () {
 
     //Hides Title and text
     header[0].innerHTML = `Score: ${score}`;
@@ -59,17 +64,85 @@ function  gameModeSelected (event) {
     //Hides a 3rd button
     buttons[2].style.display = "none";
 
-    //Shows randomised dice
+    // Remove event listeners
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].removeEventListener("click", gameModeSelected);
+    }
+
+    //Shows dice
     showDice()
 }
+//Create a starting dice number variables
+let diceNumberTotal1 = 2;
+let diceNumberTotal2 = 0;
 
+//Shows dice
 function showDice() {
     for (let i = 0; i < dice.length; i++) {
         dice[i].style.display = "flex"
+        dice[i].src = "assets/images/number-1.png";
+    } 
+    addEventListenerToButtons()
+}
+
+
+function addEventListenerToButtons () {
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", resetTheBoard)
+    }
+
+}
+
+function resetTheBoard (event) {
+    rollDice();
+    compareRolls(event);
+    addEventListenerToButtons();
+    console.log(diceNumberTotal1)
+    console.log(diceNumberTotal2)
+}
+
+
+
+// Create dice roll function 
+function rollDice () {
+    for (let i = 0; i < dice.length; i++) {
         let diceNumber = Math.floor(Math.random() * 6 + 1);
         dice[i].src = `assets/images/number-${diceNumber}.png`
-    } 
-    
-    
+        diceNumberTotal2 += diceNumber; 
+    }
 }
+
+// Compares rolls
+function compareRolls (event){
+    let clickedButton = event.value;
+    if (clickedButton === "Higher"){
+        if (diceNumberTotal2 > diceNumberTotal1){
+            score++
+            diceNumberTotal1 = diceNumberTotal2;
+            diceNumberTotal2 = 0;
+        }else if (diceNumberTotal2 < diceNumberTotal1) {
+            header[0].innerHTML = "Sorry You loose!";
+        }else{
+            header[0].innerHTML = "Sorry there has been a problem!";
+        }
+    }else if (clickedButton === "Lower") {
+        if (diceNumberTotal2 > diceNumberTotal1){
+            header[0].innerHTML = "Sorry You loose!";
+        }else if (diceNumberTotal2 < diceNumberTotal1) {
+            score++
+            diceNumberTotal1 = diceNumberTotal2;
+            diceNumberTotal2 = 0;
+        }else{
+            header[0].innerHTML = "Sorry there has been a problem!";
+        }
+    }else{
+        header[0].innerHTML = "Sorry there has been a problem!"
+    }
+} 
+
+
+
+
+
+
 
