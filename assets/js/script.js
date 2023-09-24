@@ -20,8 +20,6 @@ for (let i = 0; i < buttons.length; i++) {
 
 function chosenNumberOfDice () {
     bartender.src = "assets/images/bartender4.png";
-    buttons[2].style.display = "flex";
-    buttons[2].style.textAlign = "center";
     buttons[0].innerHTML = "Single Game";
     buttons[1].innerHTML = "Against a PC";
     
@@ -48,24 +46,14 @@ function  gameModeSelected () {
         bartender.src = "assets/images/bartender.png";
     },1000);
     
-    //Changes display properties of buttons and makes them align in a row
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].style.display = "flex";
-        buttons[i].style.justifyContent = "space-between";
-        buttons[i].style.width = "30%";
-    }
-    //Changes display properties of the div where buttons are
-    buttonsDiv.style.display = "flex"
-    buttonsDiv.style.flexDirection = "row";
+   
 
     //Changes names of the buttons
+    buttons[1].style.display = "flex";
     buttons[0].innerHTML = "Higher";
     buttons[1].innerHTML = "Lower";
     buttons[0].name = "Higher";
     buttons[1].name = "Lower";
-
-    //Hides a 3rd button
-    buttons[2].style.display = "none";
 
     // Remove event listeners
     for (let i = 0; i < buttons.length; i++) {
@@ -133,7 +121,7 @@ function compareRolls (eventTrigerer){
             buttons[0].addEventListener("click", gameModeSelected);
 
         }else{
-            header[0].innerHTML = "Oops, it looks like it's even! Here is another try on the house!";
+            header[0].innerHTML = "Oops, it looks like it's even! Here is another try!";
 
         }
     }else if (eventTrigerer === "Lower") {
@@ -148,7 +136,7 @@ function compareRolls (eventTrigerer){
             header[0].innerHTML = `Score: ${score}`;
 
         }else{
-            header[0].innerHTML = "Oops, it looks like it's even! Here is another try on the house!";
+            header[0].innerHTML = "Oops, it looks like it's even! Here is another try!";
         
         }
     }else{
