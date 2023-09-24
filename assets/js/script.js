@@ -60,6 +60,8 @@ function  gameModeSelected () {
     //Changes names of the buttons
     buttons[0].innerHTML = "Higher";
     buttons[1].innerHTML = "Lower";
+    buttons[0].name = "Higher";
+    buttons[1].name = "Lower";
 
     //Hides a 3rd button
     buttons[2].style.display = "none";
@@ -93,13 +95,13 @@ function addEventListenerToButtons () {
 
 }
 
-function resetTheBoard (event) {
-    let click = event.value;
+function resetTheBoard () {
+    let eventTrigerer = this.name;
     rollDice();
-    compareRolls(click);
+    compareRolls(eventTrigerer);
     addEventListenerToButtons();
-    console.log(diceNumberTotal1)
-    console.log(diceNumberTotal2)
+    diceNumberTotal1 = diceNumberTotal2;
+    diceNumberTotal2 = 0;
 }
 
 
@@ -111,35 +113,30 @@ function rollDice () {
         dice[i].src = `assets/images/number-${diceNumber}.png`
         diceNumberTotal2 += diceNumber; 
     }
-    console.log(`rollDice ${diceNumberTotal2}`);
 }
 
 // Compares rolls
-function compareRolls (click){
-    let clickedButton = click;
-    console.log(`Event is ${clickedButton}`);
-    if (clickedButton === "Higher"){
+function compareRolls (eventTrigerer){
+    if (eventTrigerer === "Higher"){
         if (diceNumberTotal2 > diceNumberTotal1){
-            score++
-            diceNumberTotal1 = diceNumberTotal2;
-            diceNumberTotal2 = 0;
+            score ++;
+            header[0].innerHTML = `Score: ${score}`;
         }else if (diceNumberTotal2 < diceNumberTotal1) {
-            header[0].innerHTML = "Sorry You loose!";
+            header[0].innerHTML = "Sorry You loose!1";
         }else{
-            header[0].innerHTML = "Sorry there has been a problem!";
+            header[0].innerHTML = "Sorry there has been a problem!1";
         }
-    }else if (clickedButton === "Lower") {
+    }else if (eventTrigerer === "Lower") {
         if (diceNumberTotal2 > diceNumberTotal1){
-            header[0].innerHTML = "Sorry You loose!";
+            header[0].innerHTML = "Sorry You loose!2";
         }else if (diceNumberTotal2 < diceNumberTotal1) {
             score++
-            diceNumberTotal1 = diceNumberTotal2;
-            diceNumberTotal2 = 0;
+            header[0].innerHTML = `Score: ${score}`;
         }else{
-            header[0].innerHTML = "Sorry there has been a problem!";
+            header[0].innerHTML = "Sorry there has been a problem!2";
         }
     }else{
-        header[0].innerHTML = "Sorry there has been a problem!"
+        header[0].innerHTML = "Sorry there has been a problem!3"
     }
 } 
 
