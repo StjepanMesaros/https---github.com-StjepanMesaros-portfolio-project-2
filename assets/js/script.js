@@ -38,6 +38,7 @@ let score = 0;
 function  gameModeSelected () {
 
     //Hides Title and text
+    score = 0;
     header[0].innerHTML = `Score: ${score}`;
     paragraph[0].style.display = "none";
 
@@ -75,14 +76,16 @@ function  gameModeSelected () {
     showDice()
 }
 //Create a starting dice number variables
-let diceNumberTotal1 = 2;
+let diceNumberTotal1 = 0;
 let diceNumberTotal2 = 0;
 
 //Shows dice
 function showDice() {
     for (let i = 0; i < dice.length; i++) {
-        dice[i].style.display = "flex"
-        dice[i].src = "assets/images/number-1.png";
+        dice[i].style.display = "flex";
+        let diceNumber = Math.floor(Math.random() * 6 + 1);
+        dice[i].src = `assets/images/number-${diceNumber}.png`
+        diceNumberTotal1 += diceNumber;
     } 
     addEventListenerToButtons()
 }
@@ -102,6 +105,7 @@ function resetTheBoard () {
     addEventListenerToButtons();
     diceNumberTotal1 = diceNumberTotal2;
     diceNumberTotal2 = 0;
+
 }
 
 
@@ -121,22 +125,35 @@ function compareRolls (eventTrigerer){
         if (diceNumberTotal2 > diceNumberTotal1){
             score ++;
             header[0].innerHTML = `Score: ${score}`;
+
         }else if (diceNumberTotal2 < diceNumberTotal1) {
-            header[0].innerHTML = "Sorry You loose!1";
+            header[0].innerHTML = "Sorry You loose!";
+            buttons[0].innerHTML = "Reset the game?"
+            buttons[1].style.display = "none";
+            buttons[0].addEventListener("click", gameModeSelected);
+
         }else{
-            header[0].innerHTML = "Sorry there has been a problem!1";
+            header[0].innerHTML = "Oops, it looks like it's even! Here is another try on the house!";
+
         }
     }else if (eventTrigerer === "Lower") {
         if (diceNumberTotal2 > diceNumberTotal1){
-            header[0].innerHTML = "Sorry You loose!2";
+            header[0].innerHTML = "Sorry You loose!";
+            buttons[0].innerHTML = "Reset the game?"
+            buttons[1].style.display = "none";
+            buttons[0].addEventListener("click", gameModeSelected);
+
         }else if (diceNumberTotal2 < diceNumberTotal1) {
             score++
             header[0].innerHTML = `Score: ${score}`;
+
         }else{
-            header[0].innerHTML = "Sorry there has been a problem!2";
+            header[0].innerHTML = "Oops, it looks like it's even! Here is another try on the house!";
+        
         }
     }else{
-        header[0].innerHTML = "Sorry there has been a problem!3"
+        header[0].innerHTML = "Sorry there has been a problem! Please reload the website!"
+    
     }
 } 
 
