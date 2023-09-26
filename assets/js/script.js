@@ -12,10 +12,10 @@ let diceNumberTotal2 = 0;
 let score = 0;
 let numberOfDice = "";
 
-setTimeout(()=> {
+setTimeout(() => {
     bartender.src = "assets/images/bartender3.png";
-    
-},1000);
+
+}, 1000);
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", gameModeSelected);
@@ -36,11 +36,10 @@ for (let i = 0; i < buttons.length; i++) {
 */
 
 
-function  gameModeSelected () {
+function gameModeSelected() {
     //Show dice
     numberOfDice = this.name;
     showDice()
-    console.log(`Roll before ${diceNumberTotal1} and ${diceNumberTotal2}`)
 
     //Hides Title and text
     score = 0;
@@ -49,11 +48,11 @@ function  gameModeSelected () {
 
     //Changes bartdender image to "Good Luck!" and then plain
     bartender.src = "assets/images/bartender5.png";
-    setTimeout(()=> {
+    setTimeout(() => {
         bartender.src = "assets/images/bartender.png";
-    },1000);
-    
-   
+    }, 1000);
+
+
 
     //Changes names of the buttons
     buttons[0].innerHTML = "Higher";
@@ -64,7 +63,7 @@ function  gameModeSelected () {
         buttons[i].removeEventListener("click", gameModeSelected);
     }
 
-    
+
 }
 //Create a starting dice number variables
 
@@ -90,77 +89,68 @@ function showDice() {
 }
 
 
-function addEventListenerToButtons () {
+function addEventListenerToButtons() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", resetTheBoard)
     }
 
 }
 
-function resetTheBoard () {
+function resetTheBoard() {
     let eventTrigerer = this.name;
     rollDice();
     compareRolls(eventTrigerer);
     addEventListenerToButtons();
-    console.log(`Roll after ${diceNumberTotal1} and ${diceNumberTotal2}`)
 
     diceNumberTotal1 = diceNumberTotal2;
     diceNumberTotal2 = 0;
 
-    console.log(`After reset ${diceNumberTotal1} and ${diceNumberTotal2}`)
 
 
 }
 
-function refreshWebsite (){
+function refreshWebsite() {
     location.reload(true)
 }
 
 // Create dice roll function 
-function rollDice () {
-    for (let i = 0; i < numberOfDice ; i++) {
+function rollDice() {
+    for (let i = 0; i < numberOfDice; i++) {
         let diceNumber = Math.floor(Math.random() * 6 + 1);
         dice[i].src = `assets/images/number-${diceNumber}.png`
-        diceNumberTotal2 += diceNumber; 
+        diceNumberTotal2 += diceNumber;
     }
 }
 
 // Compares rolls
-function compareRolls (eventTrigerer){
-    if (eventTrigerer === "button-one"){
-        if (diceNumberTotal2 > diceNumberTotal1){
-            score ++;
+function compareRolls(eventTrigerer) {
+    if (eventTrigerer === "button-one") {
+        if (diceNumberTotal2 > diceNumberTotal1) {
+            score++;
             header[0].innerHTML = `Score: ${score}`;
 
-        }else{
+        } else {
             header[0].innerHTML = "Sorry You lose!";
             buttons[0].innerHTML = "Reset the game?"
             buttons[1].style.display = "none";
             buttons[0].addEventListener("click", refreshWebsite);
 
         }
-    }else if (eventTrigerer === "button-two") {
-        if (diceNumberTotal2 < diceNumberTotal1){
+    } else if (eventTrigerer === "button-two") {
+        if (diceNumberTotal2 < diceNumberTotal1) {
             score++
             header[0].innerHTML = `Score: ${score}`;
 
-        }else {
-            
+        } else {
+
             header[0].innerHTML = "Sorry You lose!";
             buttons[0].innerHTML = "Reset the game?"
             buttons[1].style.display = "none";
             buttons[0].addEventListener("click", refreshWebsite);
 
         }
-    }else{
+    } else {
         header[0].innerHTML = "Sorry there has been a problem! Please reload the website!"
-    
+
     }
-} 
-
-
-
-
-
-
-
+}
