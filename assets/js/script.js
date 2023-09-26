@@ -106,7 +106,9 @@ function resetTheBoard () {
 
 }
 
-
+function refreshWebsite (){
+    location.reload(true)
+}
 
 // Create dice roll function 
 function rollDice () {
@@ -128,7 +130,7 @@ function compareRolls (eventTrigerer){
             header[0].innerHTML = "Sorry You lose!";
             buttons[0].innerHTML = "Reset the game?"
             buttons[1].style.display = "none";
-            buttons[0].addEventListener("click", gameModeSelected);
+            buttons[0].addEventListener("click", refreshWebsite);
 
         }else{
             header[0].innerHTML = "Oops, it looks like it's even! Here is another try!";
@@ -139,7 +141,7 @@ function compareRolls (eventTrigerer){
             header[0].innerHTML = "Sorry You lose!";
             buttons[0].innerHTML = "Reset the game?"
             buttons[1].style.display = "none";
-            buttons[0].addEventListener("click", gameModeSelected);
+            buttons[0].addEventListener("click", refreshWebsite);
 
         }else if (diceNumberTotal2 < diceNumberTotal1) {
             score++
