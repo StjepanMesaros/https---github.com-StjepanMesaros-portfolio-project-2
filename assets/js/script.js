@@ -7,6 +7,10 @@ let table = document.getElementById("table-image")
 let dice = document.getElementsByClassName("die")
 
 
+let diceNumberTotal1 = 0;
+let diceNumberTotal2 = 0;
+let score = 0;
+let numberOfDice = "";
 
 setTimeout(()=> {
     bartender.src = "assets/images/bartender3.png";
@@ -31,12 +35,12 @@ for (let i = 0; i < buttons.length; i++) {
 }
 */
 
-let score = 0;
-let numberOfDice = "";
+
 function  gameModeSelected () {
     //Show dice
     numberOfDice = this.name;
     showDice()
+    console.log(`Roll before ${diceNumberTotal1} and ${diceNumberTotal2}`)
 
     //Hides Title and text
     score = 0;
@@ -52,23 +56,18 @@ function  gameModeSelected () {
    
 
     //Changes names of the buttons
-    buttons[1].style.display = "flex";
     buttons[0].innerHTML = "Higher";
     buttons[1].innerHTML = "Lower";
-    buttons[0].name = "Higher";
-    buttons[1].name = "Lower";
 
     // Remove event listeners
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].removeEventListener("click", gameModeSelected);
     }
 
-    //Shows dice
     
 }
 //Create a starting dice number variables
-let diceNumberTotal1 = 0;
-let diceNumberTotal2 = 0;
+
 
 //Shows dice
 function showDice() {
@@ -77,12 +76,14 @@ function showDice() {
         let diceNumber = Math.floor(Math.random() * 6 + 1);
         dice[0].src = `assets/images/number-${diceNumber}.png`;
         diceNumberTotal1 += diceNumber;
+        numberOfDice = 1;
     } else {
         for (let i = 0; i < dice.length; i++) {
             dice[i].style.display = "flex";
             let diceNumber = Math.floor(Math.random() * 6 + 1);
             dice[i].src = `assets/images/number-${diceNumber}.png`
             diceNumberTotal1 += diceNumber;
+            numberOfDice = 2;
         }
     }
     addEventListenerToButtons()
@@ -101,8 +102,13 @@ function resetTheBoard () {
     rollDice();
     compareRolls(eventTrigerer);
     addEventListenerToButtons();
+    console.log(`Roll after ${diceNumberTotal1} and ${diceNumberTotal2}`)
+
     diceNumberTotal1 = diceNumberTotal2;
     diceNumberTotal2 = 0;
+
+    console.log(`After reset ${diceNumberTotal1} and ${diceNumberTotal2}`)
+
 
 }
 
@@ -112,7 +118,7 @@ function refreshWebsite (){
 
 // Create dice roll function 
 function rollDice () {
-    for (let i = 0; i < dice.length; i++) {
+    for (let i = 0; i < numberOfDice ; i++) {
         let diceNumber = Math.floor(Math.random() * 6 + 1);
         dice[i].src = `assets/images/number-${diceNumber}.png`
         diceNumberTotal2 += diceNumber; 
@@ -121,35 +127,30 @@ function rollDice () {
 
 // Compares rolls
 function compareRolls (eventTrigerer){
-    if (eventTrigerer === "Higher"){
+    if (eventTrigerer === "button-one"){
         if (diceNumberTotal2 > diceNumberTotal1){
             score ++;
             header[0].innerHTML = `Score: ${score}`;
 
-        }else if (diceNumberTotal2 < diceNumberTotal1) {
+        }else{
             header[0].innerHTML = "Sorry You lose!";
             buttons[0].innerHTML = "Reset the game?"
             buttons[1].style.display = "none";
             buttons[0].addEventListener("click", refreshWebsite);
-
-        }else{
-            header[0].innerHTML = "Oops, it looks like it's even! Here is another try!";
 
         }
-    }else if (eventTrigerer === "Lower") {
-        if (diceNumberTotal2 > diceNumberTotal1){
-            header[0].innerHTML = "Sorry You lose!";
-            buttons[0].innerHTML = "Reset the game?"
-            buttons[1].style.display = "none";
-            buttons[0].addEventListener("click", refreshWebsite);
-
-        }else if (diceNumberTotal2 < diceNumberTotal1) {
+    }else if (eventTrigerer === "button-two") {
+        if (diceNumberTotal2 < diceNumberTotal1){
             score++
             header[0].innerHTML = `Score: ${score}`;
 
-        }else{
-            header[0].innerHTML = "Oops, it looks like it's even! Here is another try!";
-        
+        }else {
+            
+            header[0].innerHTML = "Sorry You lose!";
+            buttons[0].innerHTML = "Reset the game?"
+            buttons[1].style.display = "none";
+            buttons[0].addEventListener("click", refreshWebsite);
+
         }
     }else{
         header[0].innerHTML = "Sorry there has been a problem! Please reload the website!"
