@@ -14,11 +14,11 @@ setTimeout(()=> {
 },1000);
 
 for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", chosenNumberOfDice);
+    buttons[i].addEventListener("click", gameModeSelected);
 }
 
 
-function chosenNumberOfDice () {
+/*function chosenNumberOfDice () {
     bartender.src = "assets/images/bartender4.png";
     buttons[0].innerHTML = "Single Game";
     buttons[1].innerHTML = "Against a PC";
@@ -27,13 +27,16 @@ function chosenNumberOfDice () {
         buttons[i].removeEventListener("click", chosenNumberOfDice)
         buttons[i].addEventListener("click", gameModeSelected);
     }
-    
+    numberOfDice = this.name;
 }
-
+*/
 
 let score = 0;
-
+let numberOfDice = "";
 function  gameModeSelected () {
+    //Show dice
+    numberOfDice = this.name;
+    showDice()
 
     //Hides Title and text
     score = 0;
@@ -61,7 +64,7 @@ function  gameModeSelected () {
     }
 
     //Shows dice
-    showDice()
+    
 }
 //Create a starting dice number variables
 let diceNumberTotal1 = 0;
@@ -69,12 +72,19 @@ let diceNumberTotal2 = 0;
 
 //Shows dice
 function showDice() {
-    for (let i = 0; i < dice.length; i++) {
-        dice[i].style.display = "flex";
+    if (numberOfDice === "button-one") {
+        dice[0].style.display = "flex";
         let diceNumber = Math.floor(Math.random() * 6 + 1);
-        dice[i].src = `assets/images/number-${diceNumber}.png`
+        dice[0].src = `assets/images/number-${diceNumber}.png`;
         diceNumberTotal1 += diceNumber;
-    } 
+    } else {
+        for (let i = 0; i < dice.length; i++) {
+            dice[i].style.display = "flex";
+            let diceNumber = Math.floor(Math.random() * 6 + 1);
+            dice[i].src = `assets/images/number-${diceNumber}.png`
+            diceNumberTotal1 += diceNumber;
+        }
+    }
     addEventListenerToButtons()
 }
 
@@ -115,7 +125,7 @@ function compareRolls (eventTrigerer){
             header[0].innerHTML = `Score: ${score}`;
 
         }else if (diceNumberTotal2 < diceNumberTotal1) {
-            header[0].innerHTML = "Sorry You loose!";
+            header[0].innerHTML = "Sorry You lose!";
             buttons[0].innerHTML = "Reset the game?"
             buttons[1].style.display = "none";
             buttons[0].addEventListener("click", gameModeSelected);
@@ -126,7 +136,7 @@ function compareRolls (eventTrigerer){
         }
     }else if (eventTrigerer === "Lower") {
         if (diceNumberTotal2 > diceNumberTotal1){
-            header[0].innerHTML = "Sorry You loose!";
+            header[0].innerHTML = "Sorry You lose!";
             buttons[0].innerHTML = "Reset the game?"
             buttons[1].style.display = "none";
             buttons[0].addEventListener("click", gameModeSelected);
