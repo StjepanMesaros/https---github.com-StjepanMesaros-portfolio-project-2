@@ -95,3 +95,9 @@ div {
         width: 2%%;
     }
 }
+
+@media screen and (min-width: 1440px) {
+    #bartender-image {
+        max-width: 25%;
+    }
+}
