@@ -47,7 +47,7 @@ function gameModeSelected() {
     paragraph[0].style.display = "none";
 
     //Changes bartdender image to "Good Luck!" and then plain
-    bartender.src = "assets/images/bartender5.png";
+    bartender.src = "assets/images/bartender4.png";
     setTimeout(() => {
         bartender.src = "assets/images/bartender.png";
     }, 1000);

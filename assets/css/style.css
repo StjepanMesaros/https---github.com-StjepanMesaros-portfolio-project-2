@@ -16,12 +16,12 @@ body {
 
 
 h1 {
-    color: white;
+    color: #a3b1a0 ;
     margin-bottom: 50px;
 }
 
 p {
-    color: white;
+    color: #a3b1a0 ;
     font-size: 75%;
     margin-bottom: 75px;
 }
@@ -32,6 +32,9 @@ div {
 .button {
     width: 100px;
     margin: 15px auto;
+    border: solid 1px #a3b1a0 ;
+    border-radius: 15px;
+    background-color: #a3b1a0 ;
 }
 #buttons-div { 
     display: flex;
@@ -92,7 +95,14 @@ div {
         width: 10%;
     }
     .button {
-        width: 2%%;
+        width: 15%;
+    }
+
+    h1 {
+        font-size: 350%;
+    }
+    p {
+        font-size: 100%;
     }
 }
 
