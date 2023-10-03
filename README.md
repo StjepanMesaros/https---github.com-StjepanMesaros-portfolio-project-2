@@ -89,3 +89,61 @@ This is a mini game designed to test your intuition, patience and, above all els
     -   Lost The Game Stage
         <h3 align="center"><img src="assets/images/lose-the-game-stage-wireframe.png"></h3>
     
+## Features <h5>[Back To top](#contents)</h5>
+
+-   ### Home page
+    -   Home page has a title, two buttons to choose a number of dice, a bartender image that displays text and a footer with my GitHub link.
+
+-   ### Rolling stage
+    -   At this stage we have the number of dice chosen and rolled. Two buttons that user can press do predict if the next roll will be higher or lower.
+
+-   ### Game Lost Stage
+    -   This stage shows the user their final score and displays a reset button that they can refresh the website with.
+
+-   ### Footer
+    -   The footer shows a link to my personal GitHub profile.
+
+
+## Technologies Used <h5>[Back To top](#contents)</h5>
+
+### Languages Used
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+### Frameworks, Libraries & Programs Used
+
+-   [Google Fonts:](https://fonts.google.com/)
+    - Google fonts were used to import the 'Agdasima and Bacasime Antique' font into the style.css file which is used on all pages throughout the project.
+-   [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+-   [GitHub:](https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+-   [Balsamiq](https://balsamiq.com/wireframes/desktop/#)
+    - Balsamiq was used to create the [wireframes](#wireframes) during the design process.
+-   [Font Awesome](https://fontawesome.com/docs)
+    -   Font awesome was used to add the website title icon and a GitHub icon in the footer.
+
+## Testing  <h5>[Back To top](#contents)</h5>
+
+### Code Validation
+
+The W3C Markup Validator, W3C CSS Validator and JSHint services were used to validate every stage of the website.
+
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+    <h3 align="center"><img src="assets/images/html-validation.png"></h3>
+
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+    <h3 align="center"><img src="assets/images/css-validation.png"></h3>
+
+-   [JSHint Validator](https://jshint.com/)
+    <h3 align="center"><img src="assets/images/jshint-report.png"></h3>
+
+### Accessibility Test
+To test the accessibility of the website [WAVE](https://wave.webaim.org) was used.
+
+- Wave Results
+
+    <h3 align="center"><img src="assets/images/wave-validation.png"></h3>
+
