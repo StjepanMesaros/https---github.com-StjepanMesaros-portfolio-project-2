@@ -1,5 +1,6 @@
+/*jshint esversion: 6 */
 // Getting elements by Class
-let dice = document.getElementsByClassName("die")
+let dice = document.getElementsByClassName("die");
 let buttons = document.getElementsByClassName("button");
 
 // Getting elements by Tag
@@ -8,7 +9,6 @@ let paragraph = document.getElementsByTagName("p");
 
 // Getting elements by Id
 let bartender = document.getElementById("bartender-image");
-let buttonsDiv = document.getElementById("buttons-div");
 
 // Generally accessed variables
 let diceNumberTotal1 = 0;
@@ -30,7 +30,7 @@ for (let i = 0; i < buttons.length; i++) {
 function gameModeSelected() {
     // Show a chosen number of dice
     numberOfDice = this.name;
-    showDice()
+    showDice();
 
     // Show scoring system
     score = 0;
@@ -69,7 +69,7 @@ function showDice() {
 
             dice[i].style.display = "flex";
             let diceNumber = Math.floor(Math.random() * 6 + 1);
-            dice[i].src = `assets/images/number-${diceNumber}.png`
+            dice[i].src = `assets/images/number-${diceNumber}.png`;
             diceNumberTotal1 += diceNumber;
             numberOfDice = 2;
 
@@ -77,13 +77,13 @@ function showDice() {
     }
 
     // Add event listeners
-    addEventListenerToButtons()
+    addEventListenerToButtons();
 }
 
 // Function designed to add event listeners that launch a function that compares rolls and decides if user is correct or not
 function addEventListenerToButtons() {
     for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("click", resetTheBoard)
+        buttons[i].addEventListener("click", resetTheBoard);
     }
 }
 
@@ -102,7 +102,7 @@ function resetTheBoard() {
 
 // If the game is lost then this function will reset the website
 function refreshWebsite() {
-    location.reload(true)
+    location.reload(true);
 }
 
 // Function that randomly rolls the dice  
@@ -110,7 +110,7 @@ function rollDice() {
     for (let i = 0; i < numberOfDice; i++) {
 
         let diceNumber = Math.floor(Math.random() * 6 + 1);
-        dice[i].src = `assets/images/number-${diceNumber}.png`
+        dice[i].src = `assets/images/number-${diceNumber}.png`;
         diceNumberTotal2 += diceNumber;
 
     }
@@ -127,7 +127,7 @@ function compareRolls(eventTrigerer) {
         } else {
 
             header[0].innerHTML = `Sorry You lose! Your final score is: ${score}!`;
-            buttons[0].innerHTML = "Reset the game?"
+            buttons[0].innerHTML = "Reset the game?";
             buttons[1].style.display = "none";
             buttons[0].addEventListener("click", refreshWebsite);
 
@@ -135,18 +135,18 @@ function compareRolls(eventTrigerer) {
     } else if (eventTrigerer === "button-two") {
         if (diceNumberTotal2 < diceNumberTotal1) {
 
-            score++
+            score++;
             header[0].innerHTML = `Score: ${score}`;
 
         } else {
 
             header[0].innerHTML = `Sorry You lose! Your final score is: ${score}!`;
-            buttons[0].innerHTML = "Reset the game?"
+            buttons[0].innerHTML = "Reset the game?";
             buttons[1].style.display = "none";
             buttons[0].addEventListener("click", refreshWebsite);
 
         }
     } else {
-        header[0].innerHTML = "Sorry there has been a problem! Please reload the website!"
+        header[0].innerHTML = "Sorry there has been a problem! Please reload the website!";
     }
 }
