@@ -1,3 +1,7 @@
+/* Google fonts import */
+
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Bacasime+Antique&family=Bodoni+Moda:opsz@6..96&display=swap');
+
 /* General body styling */
 * {
     margin: 0;
@@ -8,7 +12,7 @@ html, body {
 }
 
 body {
-    background-color: #000000;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -21,12 +25,12 @@ div {
 
 /* Text styling */
 h1 {
-    color: #ffffff;
+    color: white;
     margin-bottom: 50px;
 }
 
 p {
-    color: #ffffff;
+    color: white;
     font-size: 75%;
     margin-bottom: 75px;
 }
@@ -50,11 +54,11 @@ p {
 
 .button {
     width: 100px;
-    height: 25px;
+    height: 35px;
     margin: 15px auto;
-    border: solid 1px #ffffff;
+    border: solid 1px white;
     border-radius: 15px;
-    background-color: #ffffff;
+    background-color: white;
     font-size: medium;
 }
 
