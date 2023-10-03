@@ -10,17 +10,15 @@ let paragraph = document.getElementsByTagName("p");
 let bartender = document.getElementById("bartender-image");
 let buttonsDiv = document.getElementById("buttons-div");
 
-
 // Generally accessed variables
 let diceNumberTotal1 = 0;
 let diceNumberTotal2 = 0;
 let score = 0;
 let numberOfDice = "";
 
-
 // Chnages bartender image after 1s to change the text
 setTimeout(() => {
-    
+
     bartender.src = "assets/images/bartender3.png";
 
 }, 1000);
