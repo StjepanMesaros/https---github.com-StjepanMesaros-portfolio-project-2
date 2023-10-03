@@ -72,6 +72,18 @@ p {
     max-width: 97.5%;
 }
 
+/* Footer styling */
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 15%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
 /* Media query rules */
 @media screen and (min-width: 375px) {
     #bartender-image {
@@ -94,6 +106,10 @@ p {
 
     .button {
         width: 150px;
+    }
+
+    footer {
+        right: 45%;
     }
 }
 
