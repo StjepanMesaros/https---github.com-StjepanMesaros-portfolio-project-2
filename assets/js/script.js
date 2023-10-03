@@ -18,16 +18,12 @@ let numberOfDice = "";
 
 // Chnages bartender image after 1s to change the text
 setTimeout(() => {
-
     bartender.src = "assets/images/bartender3.png";
-
 }, 1000);
 
 // Adding event listeners to buttons that will choose between 1 or 2 dice
 for (let i = 0; i < buttons.length; i++) {
-
     buttons[i].addEventListener("click", gameModeSelected);
-
 }
 
 // Function that shows dice, transforms title into a scoring system, changes bartdender image and changes button text
@@ -53,9 +49,7 @@ function gameModeSelected() {
 
     // Remove event listeners
     for (let i = 0; i < buttons.length; i++) {
-
         buttons[i].removeEventListener("click", gameModeSelected);
-
     }
 }
 
@@ -89,9 +83,7 @@ function showDice() {
 // Function designed to add event listeners that launch a function that compares rolls and decides if user is correct or not
 function addEventListenerToButtons() {
     for (let i = 0; i < buttons.length; i++) {
-
         buttons[i].addEventListener("click", resetTheBoard)
-
     }
 }
 
@@ -155,8 +147,6 @@ function compareRolls(eventTrigerer) {
 
         }
     } else {
-
         header[0].innerHTML = "Sorry there has been a problem! Please reload the website!"
-
     }
 }
