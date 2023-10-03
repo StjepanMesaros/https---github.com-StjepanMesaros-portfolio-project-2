@@ -134,7 +134,7 @@ function compareRolls(eventTrigerer) {
 
         } else {
 
-            header[0].innerHTML = "Sorry You lose!";
+            header[0].innerHTML = `Sorry You lose! Your final score is: ${score}!`;
             buttons[0].innerHTML = "Reset the game?"
             buttons[1].style.display = "none";
             buttons[0].addEventListener("click", refreshWebsite);
@@ -148,7 +148,7 @@ function compareRolls(eventTrigerer) {
 
         } else {
 
-            header[0].innerHTML = "Sorry You lose!";
+            header[0].innerHTML = `Sorry You lose! Your final score is: ${score}!`;
             buttons[0].innerHTML = "Reset the game?"
             buttons[1].style.display = "none";
             buttons[0].addEventListener("click", refreshWebsite);
