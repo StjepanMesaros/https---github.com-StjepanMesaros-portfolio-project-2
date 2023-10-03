@@ -85,12 +85,15 @@ a {
 }
 
 /* Media query rules */
+
+/* For screen size 375px */
 @media screen and (min-width: 375px) {
     #bartender-image {
         max-width: 70%;
     }
 }
 
+/* For screen size 768px */
 @media screen and (min-width: 768px) {
     #bartender-image {
         max-width: 40%;
@@ -113,6 +116,7 @@ a {
     }
 }
 
+/* For screen size 1024px */
 @media screen and (min-width: 1024px) {
     #bartender-image {
         max-width: 30%;
@@ -139,6 +143,7 @@ a {
     }
 }
 
+/* For screen size 1440px */
 @media screen and (min-width: 1440px) {
     #bartender-image {
         max-width: 25%;
