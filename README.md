@@ -181,7 +181,7 @@ To test the performance of the website, Lighthouse testing for mobile and deskto
 |  |  |  |  |
 | Brave | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
 |  |  |  |  |
-| Safari | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. ||
+| Safari | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality.a q |
 |  |  |  |  |
 | Internet Explorer | FFull functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
 |  |  |  |  |
