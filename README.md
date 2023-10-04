@@ -147,3 +147,47 @@ To test the accessibility of the website [WAVE](https://wave.webaim.org) was use
 
     <h3 align="center"><img src="assets/images/wave-validation.png"></h3>
 
+### Performance Test
+To test the performance of the website, Lighthouse testing for mobile and desktop was performed.
+
+- Desktop Results
+
+    <h3 align="center"><img src="assets/images/lighthouse-desktop-test.png"></h3>
+
+- Mobile Results
+
+    <h3 align="center"><img src="assets/images/lighthouse-mobile-test.png"></h3>
+
+### Feature Testing
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| `Home Page` |
+|   |   |   |   |
+| Buttons | When clicked will choose a number of dice to be played with. | Clicked on the buttons. | One die appeared or two dice appeared. | Pass |
+| `Rolling Stage` |
+|   |   |   |   |
+| Buttons | When clicked one should determin if the next roll will be higher and the other button says it will be lower. Both have a functionality to roll the die/dice and compare rolls; ultimately make the score go up or let the user know that they lost the game. | Clicked on both buttons to see if the logic behind it is correct. | Rolls were accurately compared and the scoring system works. | Pass |
+| `Footer` |
+|  |  |  |  |  |
+| GitHub link | When clicked the user will be redirected to the my GitHub profile. | Clicked icon | Redirected to the GitHub profile page in a new window. | Pass |
+
+
+### Browser Support Testing
+
+| Device/Browser | Expected Performance | Testing Performed | Result |
+| --- | --- | --- | --- |
+| Google Chrome | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
+|  |  |  |  |
+| Brave | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
+|  |  |  |  |
+| Safari | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. ||
+|  |  |  |  |
+| Internet Explorer | FFull functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
+|  |  |  |  |
+| Microsoft Edge | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
+|  |  |  |  |
+| iPhone 13 Pro Max | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
+|  |  |  |  |
+| Samsung s21 | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
+
