@@ -181,7 +181,7 @@ To test the performance of the website, Lighthouse testing for mobile and deskto
 |  |  |  |  |
 | Brave | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
 |  |  |  |  |
-| Safari | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality.a q |
+| Safari | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
 |  |  |  |  |
 | Internet Explorer | FFull functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
 |  |  |  |  |
@@ -190,4 +190,37 @@ To test the performance of the website, Lighthouse testing for mobile and deskto
 | iPhone 13 Pro Max | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
 |  |  |  |  |
 | Samsung s21 | Full functionality of external and internal links as well as full functionality of the buttons. | Tested all features, links and buttons. | Passed with full functionality. |
+
+## Bugs <h5>[Back To top](#contents)</h5>
+
+### Known Bugs
+
+-   When the roll is equal it is considered a failed prediction.
+
+### Fixed Bugs
+
+-   Buttons were very thin and would not scale up or down.
+    <h3 align="center"><img src="assets/images/bug-1.png"></h3>
+
+    That was fixed by adding a new fixed height and making them display as flex. <h3 align="center"><img src="assets/images/fix-1.png"></h3>
+
+-   GitHub link was moving too much to the left and not scaling up to move to the middle. 
+    <h3 align="center"><img src="assets/images/bug-2.png"></h3>
+
+    
+    I had to set the proper margins and then change them according to the screen size. 
+    <h3 align="center"><img src="assets/images/fix-2.png"></h3>
+
+## Deployment <h5>[Back To top](#contents)</h5>
+
+### GitHub Pages
+
+The project was deployed to GitHub Pages using the following steps:
+
+1. Log in to GitHub and locate the GitHub Repository
+2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+4. Under "Source", click the dropdown called "None" and select "Master Branch".
+5. The page will automatically refresh.
+6. Scroll back down through the page to locate the now published site in the "GitHub Pages" section.
 
